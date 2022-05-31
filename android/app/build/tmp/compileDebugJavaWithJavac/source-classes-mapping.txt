@@ -1,0 +1,15 @@
+com/fairyhub/MainApplication.java
+ com.fairyhub.MainApplication
+ com.fairyhub.MainApplication$1
+com/fairyhub/BuildConfig.java
+ com.fairyhub.BuildConfig
+com/fairyhub/MainActivity.java
+ com.fairyhub.MainActivity
+ com.fairyhub.MainActivity$1
+com/facebook/react/PackageList.java
+ com.facebook.react.PackageList
+com/fairyhub/ReactNativeFlipper.java
+ com.fairyhub.ReactNativeFlipper
+ com.fairyhub.ReactNativeFlipper$1
+ com.fairyhub.ReactNativeFlipper$2
+ com.fairyhub.ReactNativeFlipper$2$1

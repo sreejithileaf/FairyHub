@@ -1,0 +1,80 @@
+{
+  "project_info": {
+    "project_number": "246798568353",
+    "firebase_url": "https://fairyhubreactnative.firebaseio.com",
+    "project_id": "fairyhubreactnative",
+    "storage_bucket": "fairyhubreactnative.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246798568353:android:2a43e3992ccdcd2d0a59e0",
+        "android_client_info": {
+          "package_name": "com.fairyhub.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246798568353-16vp4omrf2nq7h934qe2fmfijuo2nnqa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fairyhub.app",
+            "certificate_hash": "3efac459008be5014ad1d08e626a6542684d347c"
+          }
+        },
+        {
+          "client_id": "246798568353-7s09q2ffi4lojfcqmploe0fqoqiqc3i3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fairyhub.app",
+            "certificate_hash": "44bbef364820a398d35a4b3369d8dcb6497077e7"
+          }
+        },
+        {
+          "client_id": "246798568353-m3qs58p1udt74qkkfuct55nv34tm9564.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fairyhub.app",
+            "certificate_hash": "faaf61818ed4abab3f27a042372528e3e484fa61"
+          }
+        },
+        {
+          "client_id": "246798568353-sgckmtsaa7hcqb66c8diu50qpi2i9m8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fairyhub.app",
+            "certificate_hash": "76ac654261767d344655df7a1b550874f3bc4905"
+          }
+        },
+        {
+          "client_id": "246798568353-mc819j1hqram52s14ip2bbhhec21kt7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJgd7R6Pxbhnz59tFczEyopjTixiD46No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246798568353-mc819j1hqram52s14ip2bbhhec21kt7t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "246798568353-9vopd2lj2jb1hhh4gpu8bvf0t5up972u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fairyhub.app",
+                "app_store_id": "1422685012"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

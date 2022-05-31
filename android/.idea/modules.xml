@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Fairyhub.iml" filepath="$PROJECT_DIR$/.idea/modules/Fairyhub.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Fairyhub.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Fairyhub.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-981175348/Fairyhub.react-native-adjust.iml" filepath="$PROJECT_DIR$/.idea/modules/-981175348/Fairyhub.react-native-adjust.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1324126350/Fairyhub.react-native-async-storage_async-storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-1324126350/Fairyhub.react-native-async-storage_async-storage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1529600512/Fairyhub.react-native-community_blur.iml" filepath="$PROJECT_DIR$/.idea/modules/1529600512/Fairyhub.react-native-community_blur.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1829098483/Fairyhub.react-native-community_geolocation.iml" filepath="$PROJECT_DIR$/.idea/modules/-1829098483/Fairyhub.react-native-community_geolocation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1533124526/Fairyhub.react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/.idea/modules/1533124526/Fairyhub.react-native-community_masked-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2136691630/Fairyhub.react-native-community_netinfo.iml" filepath="$PROJECT_DIR$/.idea/modules/-2136691630/Fairyhub.react-native-community_netinfo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/510862756/Fairyhub.react-native-community_toolbar-android.iml" filepath="$PROJECT_DIR$/.idea/modules/510862756/Fairyhub.react-native-community_toolbar-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2075677744/Fairyhub.react-native-date-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/2075677744/Fairyhub.react-native-date-picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/855271016/Fairyhub.react-native-device-info.iml" filepath="$PROJECT_DIR$/.idea/modules/855271016/Fairyhub.react-native-device-info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-240608409/Fairyhub.react-native-fast-image.iml" filepath="$PROJECT_DIR$/.idea/modules/-240608409/Fairyhub.react-native-fast-image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1660124191/Fairyhub.react-native-fbsdk.iml" filepath="$PROJECT_DIR$/.idea/modules/-1660124191/Fairyhub.react-native-fbsdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1961110600/Fairyhub.react-native-fingerprint-scanner.iml" filepath="$PROJECT_DIR$/.idea/modules/-1961110600/Fairyhub.react-native-fingerprint-scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-846802383/Fairyhub.react-native-firebase_analytics.iml" filepath="$PROJECT_DIR$/.idea/modules/-846802383/Fairyhub.react-native-firebase_analytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/465730060/Fairyhub.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/465730060/Fairyhub.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1675690794/Fairyhub.react-native-firebase_dynamic-links.iml" filepath="$PROJECT_DIR$/.idea/modules/-1675690794/Fairyhub.react-native-firebase_dynamic-links.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1305850647/Fairyhub.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/-1305850647/Fairyhub.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-964768374/Fairyhub.react-native-google-signin_google-signin.iml" filepath="$PROJECT_DIR$/.idea/modules/-964768374/Fairyhub.react-native-google-signin_google-signin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-685899525/Fairyhub.react-native-linear-gradient.iml" filepath="$PROJECT_DIR$/.idea/modules/-685899525/Fairyhub.react-native-linear-gradient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1157340422/Fairyhub.react-native-localize.iml" filepath="$PROJECT_DIR$/.idea/modules/1157340422/Fairyhub.react-native-localize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1000895247/Fairyhub.react-native-onesignal.iml" filepath="$PROJECT_DIR$/.idea/modules/-1000895247/Fairyhub.react-native-onesignal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1599222643/Fairyhub.react-native-orientation.iml" filepath="$PROJECT_DIR$/.idea/modules/1599222643/Fairyhub.react-native-orientation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/861729836/Fairyhub.react-native-pager-view.iml" filepath="$PROJECT_DIR$/.idea/modules/861729836/Fairyhub.react-native-pager-view.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1042281892/Fairyhub.react-native-picker_picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1042281892/Fairyhub.react-native-picker_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1368794003/Fairyhub.react-native-reanimated.iml" filepath="$PROJECT_DIR$/.idea/modules/1368794003/Fairyhub.react-native-reanimated.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-875641294/Fairyhub.react-native-restart.iml" filepath="$PROJECT_DIR$/.idea/modules/-875641294/Fairyhub.react-native-restart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-140652782/Fairyhub.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/-140652782/Fairyhub.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-299139670/Fairyhub.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/-299139670/Fairyhub.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1379056834/Fairyhub.react-native-share.iml" filepath="$PROJECT_DIR$/.idea/modules/1379056834/Fairyhub.react-native-share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1044198398/Fairyhub.react-native-snackbar.iml" filepath="$PROJECT_DIR$/.idea/modules/-1044198398/Fairyhub.react-native-snackbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2015386251/Fairyhub.react-native-splash-screen.iml" filepath="$PROJECT_DIR$/.idea/modules/-2015386251/Fairyhub.react-native-splash-screen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1050892646/Fairyhub.react-native-touch-id.iml" filepath="$PROJECT_DIR$/.idea/modules/1050892646/Fairyhub.react-native-touch-id.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-451667059/Fairyhub.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/-451667059/Fairyhub.react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1192043870/Fairyhub.react-native-video.iml" filepath="$PROJECT_DIR$/.idea/modules/1192043870/Fairyhub.react-native-video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1040197092/Fairyhub.react-native-webview.iml" filepath="$PROJECT_DIR$/.idea/modules/-1040197092/Fairyhub.react-native-webview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1808042582/Fairyhub.rn-fetch-blob.iml" filepath="$PROJECT_DIR$/.idea/modules/1808042582/Fairyhub.rn-fetch-blob.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1494922359/Fairyhub.rn-range-slider.iml" filepath="$PROJECT_DIR$/.idea/modules/1494922359/Fairyhub.rn-range-slider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1880563680/Fairyhub.sentry_react-native.iml" filepath="$PROJECT_DIR$/.idea/modules/1880563680/Fairyhub.sentry_react-native.iml" />
+    </modules>
+  </component>
+</project>

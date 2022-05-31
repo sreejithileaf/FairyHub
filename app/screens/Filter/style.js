@@ -1,0 +1,196 @@
+import { StyleSheet } from "react-native";
+import Constants from "../../config/constants";
+import { normalizedHeight, normalizedWidth } from "../../config/common";
+import constants from "../../config/constants";
+
+const styles = StyleSheet.create({
+  titleStyle: {
+    textAlign: "left",
+    fontSize: 18,
+    fontFamily: Constants.Fonts.BOLD,
+    color: Constants.APP_BLACK_COLOR,
+  },
+  scrollView: {
+    paddingTop: 10,
+    // paddingHorizontal: 15,
+    flex: 1,
+    marginHorizontal: 15,
+  },
+  wrapper: {
+    paddingTop: 4,
+    paddingBottom: 20,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Constants.APP_GRAY_COLOR4,
+  },
+  genderContainer: {
+    marginRight: 22.5,
+    marginTop: 18,
+  },
+  genderIcons: {
+    height: 60,
+    width: 60,
+  },
+  genderContainer2: {
+    width: 83,
+    height: 83,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 5,
+  },
+  listText: {
+    color: "rgb(137, 136, 137)",
+    fontFamily: Constants.Fonts.REGULAR,
+    fontSize: 16,
+    marginTop: 5.5,
+    textAlign: "center",
+  },
+  listTextActive: {
+    color: Constants.APP_THEME_COLOR,
+    fontFamily: Constants.Fonts.REGULAR,
+    fontSize: 15,
+    textAlign: "center",
+    marginRight: 5,
+  },
+  listText2: {
+    color: Constants.APP_GRAY_COLOR,
+    fontSize: 15,
+    fontFamily: Constants.Fonts.MEDIUM,
+  },
+  brandWrapper: {
+    paddingTop: 18,
+    paddingBottom: 16.5,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Constants.APP_GRAY_COLOR4,
+  },
+  checkBoxIcon: {
+    height: 18,
+    width: 18,
+    resizeMode: "contain",
+    marginRight: 13,
+    tintColor: "rgba(110,110,110,0.5)",
+  },
+  checkBoxIcon1: {
+    height: 18,
+    width: 18,
+    resizeMode: "contain",
+    marginRight: 13,
+    tintColor: Constants.APP_GRAY_COLOR,
+  },
+  checkBoxIconSelected: {
+    height: 18,
+    width: 18,
+    tintColor: Constants.APP_THEME_COLOR,
+    resizeMode: "contain",
+    marginRight: 13,
+    tintColor: constants.APP_THEME_COLOR,
+  },
+  checkBoxWrap: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: "50%",
+    paddingVertical: 10,
+  },
+  checkBoxContain: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingBottom: 16,
+  },
+  checkText: {
+    color: Constants.APP_GRAY_COLOR,
+    fontFamily: Constants.Fonts.MEDIUM,
+    fontSize: 14,
+    textAlign: "center",
+  },
+  checkTextActive: {
+    color: Constants.APP_THEME_COLOR,
+    fontFamily: Constants.Fonts.MEDIUM,
+    fontSize: 14,
+    textAlign: "center",
+  },
+  row: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  priceWrapper: {
+    paddingTop: 15.5,
+    paddingBottom: 21.5,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Constants.APP_GRAY_COLOR4,
+  },
+  charecterWrapper: {
+    paddingTop: 18,
+    paddingBottom: 24,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Constants.APP_GRAY_COLOR4,
+  },
+  discountWrap: {
+    paddingTop: 15,
+    borderBottomWidth: 0.25,
+    borderBottomColor: Constants.APP_GRAY_COLOR4,
+  },
+  inputWrap: {
+    width: "50%",
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: Constants.APP_GRAY_COLOR4,
+    width: "80%", //normalizedWidth(145),
+    textAlign: "center",
+    borderRadius: 5,
+    height: 40,
+    paddingHorizontal: 10,
+    marginTop: 5,
+    color: constants.APP_BLACK_COLOR,
+    fontSize: 14,
+    fontFamily: Constants.Fonts.MEDIUM,
+  },
+  advanceFilter: {
+    textDecorationLine: "underline",
+    textDecorationColor: Constants.APP_THEME_COLOR,
+    color: Constants.APP_THEME_COLOR,
+    fontSize: 18,
+    fontFamily: Constants.Fonts.MEDIUM,
+    marginTop: 10,
+    textAlign: "left",
+  },
+  filterBtn: {
+    backgroundColor: Constants.APP_THEME_COLOR,
+    justifyContent: "center",
+    height: 47,
+    borderRadius: 10,
+    marginTop: 25,
+    marginBottom: 40,
+  },
+  priceLabel: {
+    color: "rgb(154,154,154)",
+    fontSize: 12,
+    fontFamily: Constants.Fonts.MEDIUM,
+    paddingTop: 20,
+    paddingBottom: 5,
+    textAlign: "left",
+  },
+  btnText: {
+    color: Constants.APP_WHITE_COLOR,
+    fontFamily: Constants.Fonts.MEDIUM,
+    textAlign: "center",
+    fontSize: 15,
+  },
+  deliveryIcon: {
+    // height: 16,
+    // width: 23,
+    // resizeMode: "contain",
+    // marginLeft: 15,
+  },
+  truckContainer: {
+    width: 25,
+    height: 25,
+    borderRadius: 12.5,
+    borderWidth: 1,
+    borderColor: constants.APP_GRAY_COLOR4,
+    alignItems: "center",
+    justifyContent: "center",
+    marginLeft: 15,
+  },
+});
+
+export default styles;

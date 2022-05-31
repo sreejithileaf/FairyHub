@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.fairyhub.app",
+    "sha256_cert_fingerprints":
+    ["22:2E:32:0E:D7:9C:84:5A:7A:66:48:B5:5A:DE:4C:95:F4:13:81:9A:90:E0:C8:8D:36:F9:5B:0D:32:4E:4D:C5"]
+  }
+}]

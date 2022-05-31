@@ -1,0 +1,308 @@
+/**
+ * Created by Nithin for iLeaf Solutions Pvt.Ltd
+ * on July 09, 2020
+ * Account - Account Styles
+ */
+
+import {StyleSheet} from 'react-native';
+import AppStyles from '../../config/styles';
+import Constants from '../../config/constants';
+import {normalizedHeight, normalizedWidth} from '../../config/common';
+
+const styles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+    backgroundColor: Constants.APP_WHITE_COLOR,
+  },
+  scrollContainer: {
+    // backgroundColor: Constants.APP_GRAY_COLOR2,
+    //height: Constants.SCREEN_HEIGHT
+  },
+  userInfoContainer: {
+    marginTop: 15,
+    marginBottom: 1,
+    backgroundColor: Constants.APP_WHITE_COLOR,
+    alignItems: 'center',
+  },
+  noUserContainer: {
+    flexDirection: 'row',
+    width: '100%',
+    alignSelf: 'center',
+    justifyContent: 'space-evenly',
+    backgroundColor: Constants.APP_WHITE_COLOR,
+  },
+  buttonSignup: {
+    borderWidth: 1,
+    borderColor: 'rgb(241, 73, 53)',
+    borderRadius: 25,
+    width: '43%',
+    height: normalizedHeight(46),
+    marginVertical: normalizedHeight(34),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonLogin: {
+    borderRadius: 25,
+    width: '43%',
+    backgroundColor: 'rgb(241, 73, 53)',
+    height: normalizedHeight(46),
+    marginVertical: normalizedHeight(34),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  socialName: {
+    fontSize: 15,
+    color: Constants.APP_WHITE_COLOR,
+    fontFamily: Constants.Fonts.MEDIUM,
+  },
+  userNameText: {
+    fontSize: 18,
+    fontFamily: Constants.Fonts.BOLD,
+    color: 'rgb(40,40,40)',
+    marginHorizontal: 20,
+    marginTop: 16,
+    textAlign: 'left',
+  },
+  userEmailText: {
+    fontSize: 15,
+    fontFamily: Constants.Fonts.REGULAR,
+    color: 'rgb(142,142,142)',
+    marginHorizontal: 20,
+    marginTop: 4,
+    marginBottom: 10,
+    textAlign: 'left',
+  },
+  editIconContainer: {
+    width: 120,
+    height: 30,
+    borderRadius: 5,
+    backgroundColor: 'rgb(241, 73, 53)',
+    marginStart: 20,
+    marginBottom: 22,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  editProfileText: {
+    fontSize: 13,
+    fontFamily: Constants.Fonts.REGULAR,
+    color: 'rgb(255,255,255)',
+  },
+  editImage: {
+    width: 20,
+    height: 20,
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    marginBottom: 30,
+  },
+  itemContainer2: {
+    flexDirection: 'row',
+    marginBottom: 30,
+    borderBottomWidth: 1,
+    borderColor: Constants.APP_SEPARATOR_COLOR,
+  },
+  itemText: {
+    fontSize: 16,
+    fontFamily: Constants.Fonts.REGULAR,
+    color: 'rgb(142,142,142)',
+    margin: normalizedWidth(5),
+    marginLeft: normalizedWidth(24),
+    textAlign: 'left',
+  },
+  itemImage: {
+    width: 16,
+    height: 16,
+    marginEnd: 18,
+    marginStart: 40,
+    alignSelf: 'center',
+    tintColor: 'rgb(142, 142, 142)',
+  },
+  line: {
+    height: 1,
+    // width: "100%",
+    backgroundColor: Constants.APP_SEPARATOR_COLOR,
+    marginBottom: normalizedHeight(25),
+    shadowColor: 'rgba(110,110,110,0.7)',
+    shadowOffset: {
+      width: 0,
+      height: 5,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 4.65,
+
+    elevation: 4,
+  },
+  line2: {
+    height: 1,
+    width: '93%',
+    backgroundColor: Constants.APP_SEPARATOR_COLOR,
+    // marginBottom: normalizedHeight(25),
+    position: 'absolute',
+    top: 50,
+    left: 8,
+  },
+  profileEdit: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 60,
+    height: 60,
+    backgroundColor: '#f69b20',
+    borderRadius: 100,
+  },
+  actionSheetTitle: {
+    color: 'rgb(154,154,154)',
+    fontSize: 18,
+    fontFamily: Constants.Fonts.REGULAR,
+  },
+  title: {
+    fontSize: 18,
+    fontFamily: Constants.Fonts.MEDIUM,
+    color: 'rgb(81,81,81)',
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    height: 50,
+    paddingLeft: 25,
+    paddingRight: 18,
+    alignItems: 'center',
+    backgroundColor: 'rgb(246,246,246)',
+  },
+  itemAddressLogo: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 40,
+    height: 40,
+    marginLeft: 7,
+    backgroundColor: '#3d7fe0',
+    borderRadius: 100,
+  },
+  itemLogo: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 34,
+    height: 34,
+    marginLeft: normalizedWidth(7),
+    borderRadius: 100,
+  },
+  radioContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  radioImg: {
+    height: 19,
+    width: 19,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: 10,
+    right: 45,
+  },
+  parentHr: {
+    height: 1,
+    color: Constants.APP_WHITE_COLOR,
+    width: '100%',
+  },
+  child: {
+    backgroundColor: Constants.APP_WHITE_COLOR,
+    paddingLeft: normalizedWidth(20),
+    paddingTop: normalizedWidth(25),
+    // paddingBottom: normalizedWidth(31),
+  },
+  addButtonStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 24,
+    backgroundColor: 'rgb(255,157,10)',
+    marginBottom: 20,
+  },
+  addText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontFamily: Constants.Fonts.REGULAR,
+    paddingHorizontal: 15,
+    paddingVertical: 2,
+  },
+  passwordModalWrapper: {
+    //flex: 1,
+    width: '80%', //Constants.SCREEN_WIDTH,
+    height: Constants.SCREEN_HEIGHT,
+    // paddingHorizontal: 5,
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  passwordCardWrapper: {
+    backgroundColor: 'rgb(255,255,255)',
+    borderRadius: 15,
+    width: '90%',
+  },
+  keepInTouchPopUptext: {
+    flex: 1,
+    marginHorizontal: 10,
+    color: Constants.APP_GRAY_COLOR,
+  },
+  socialMediaIcons: {
+    width: 30,
+    height: 30,
+  },
+  popUpClose: {
+    width: 15,
+    height: 15,
+    marginRight: 20,
+    tintColor: Constants.APP_BLACK_COLOR,
+  },
+  version: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 13,
+    color: Constants.APP_GRAY_COLOR,
+    marginRight: 20,
+  },
+  line2: {
+    height: 1,
+    backgroundColor: Constants.APP_GRAY_COLOR4,
+    flex: 1,
+  },
+  loginWith: {
+    color: 'gray',
+    fontFamily: Constants.Fonts.REGULAR,
+    fontSize: 15,
+    marginHorizontal: 10,
+  },
+  fbStyle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'rgba(234,241,248,1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+  googleStyle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'rgba(252,238,238,1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+  appleStyle: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: 'rgba(244,244,244,1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal: 10,
+  },
+  socialIcon: {
+    width: 20,
+    height: 20,
+  },
+});
+
+export default styles;

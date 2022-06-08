@@ -17,24 +17,13 @@ const styles = StyleSheet.create({
     width: '100%',
     resizeMode: 'contain',
   },
-  productImgWrap: {
-    borderRadius: 5,
+  productImgWrap: {   
     height: 140,
     width: 100,
-    justifyContent: 'center',
-    borderWidth: 0.25,
-    borderColor: constants.APP_GRAY_COLOR4,
-    backgroundColor: constants.APP_WHITE_COLOR,
-    // shadowColor: "#000",
-    padding: 10,
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 1,
-    // },
-    // shadowOpacity: 0.22,
-    // shadowRadius: 2.22,
-    marginLeft: 10,
-    // elevation: 5,
+    justifyContent: 'center',   
+    backgroundColor: constants.APP_WHITE_COLOR,  
+    padding: 10,    
+    marginLeft: 10,   
   },
   content: {
     paddingLeft: 20,
@@ -43,13 +32,13 @@ const styles = StyleSheet.create({
   title: {
     color: constants.APP_BLACK_COLOR,
     fontSize: 14,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDBOLD,
     textAlign: 'left',
   },
   description: {
     fontSize: 12,
     color: constants.APP_GRAY_COLOR,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     paddingTop: 10,
   },
   bottomButtonContainer: {
@@ -70,14 +59,16 @@ const styles = StyleSheet.create({
     
   },
   bottomButtonText: {
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
+    fontWeight: '400',
     fontSize: 12,
     color: 'rgb(219, 71, 61)',
     paddingVertical: 10,
     textAlign: 'center',
   },
   bottomButtonText2: {
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
+    fontWeight: '400',
     fontSize: 12,
     color: 'rgb(20, 68, 147)',
     paddingVertical: 10,
@@ -87,12 +78,11 @@ const styles = StyleSheet.create({
     // paddingTop: 10,
   },
   row1: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    // paddingTop: 10,
-    flex: 1,
-  },
+    flexDirection: 'column', 
+    alignSelf: 'center',   
+    flex: 1, 
+    paddingLeft: 25,
+  }, 
   row2: {
     flexDirection: 'row',
     // position:"absolute"
@@ -102,8 +92,8 @@ const styles = StyleSheet.create({
   },
   specText: {
     fontSize: 12,
-    color: constants.APP_GRAY_COLOR,
-    fontFamily: constants.Fonts.REGULAR,
+    color: constants.APP_GRAY_COLOR5,
+    fontFamily: constants.Fonts.LEXENDLIGHT,
     paddingRight: 7,
     paddingTop: 10,
     textAlign: 'left',
@@ -113,32 +103,27 @@ const styles = StyleSheet.create({
     width: 18,
     // marginRight: 20,
     borderWidth: 1,
-    borderColor: constants.APP_BLACK_COLOR,
+    borderColor: 'rgb(105, 113, 128)',
   },
   checkboxImg: {
     height: 18,
     width: 18,
     // marginRight: 20,
     borderWidth: 1,
-    borderColor: 'rgb(68,200,86)',
+    borderColor: 'rgb(20,68,147)',
     alignItems: 'center',
     justifyContent: 'center',
     // tintColor: "#44c856",
   },
-  checkBoxWrap: {
-    width: '50%',
-    // marginRight: 38,
-    // flexDirection: 'row',
-    alignItems: 'center',
-    // flexWrap: 'wrap',
-    paddingTop: 20,
-    alignSelf: 'center',
-    paddingHorizontal: 10,
+  checkBoxWrap: { 
+    alignItems: 'center',   
+    paddingTop: 20,  
+    paddingBottom: 5,
   },
   semiBoldText: {
     fontSize: 11,
-    color: constants.APP_GRAY_COLOR,
-    fontFamily: constants.Fonts.MEDIUM,
+    color: constants.APP_GRAY_COLOR5,
+    fontFamily: constants.Fonts.LEXENDLIGHT,
   },
   checkBoxWrap1: {
     width: '50%',
@@ -153,7 +138,7 @@ const styles = StyleSheet.create({
   semiBoldText1: {
     fontSize: 11,
     color: 'rgb(154,154,154)',
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
   },
   priceRow: {
     flexDirection: 'row',
@@ -163,14 +148,13 @@ const styles = StyleSheet.create({
   priceWrap: {
     flexDirection: 'row',
   },
-  priceRedText: {
-    color: constants.APP_BLACK_COLOR,
+  priceRedText: {    
     fontSize: 14,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
   },
   btnText: {
     color: constants.APP_GRAY_COLOR,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     fontSize: 10,
     textAlign: 'center',
   },
@@ -186,29 +170,36 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   plusIcon: {
-    height: 24,
-    width: 24,
+    height: 30,
+    width: 30,
     resizeMode: 'contain',
   },
   increamentWrap: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 15,
     alignItems: 'center',
   },
   count: {
     color: constants.APP_BLACK_COLOR,
     fontSize: 11,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDBOLD,
   },
-  countNum: {
-    marginHorizontal: 10,
+  countNum: {  
     width: 30,
     textAlign: 'center',
     paddingVertical: 0,
-    fontSize: 11,
-    fontFamily: constants.Fonts.MEDIUM,
-    color: constants.APP_BLACK_COLOR,
+    fontSize: 13,    
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
+    color: constants.APP_WHITE_COLOR,
   },
+  countNumBg: {
+    marginHorizontal: 10,
+    height: 30,
+    width: 30,
+    resizeMode: 'contain',   
+    paddingVertical: 0,  
+    },
+
   discountContainer: {
     // width: 50,
     // height: 15,
@@ -226,7 +217,7 @@ const styles = StyleSheet.create({
   discountText: {
     color: constants.APP_WHITE_COLOR,
     // fontFamily: constants.Fonts.MYRIAD,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     fontSize: 9,
   },
   outOfStockContainer: {
@@ -239,7 +230,7 @@ const styles = StyleSheet.create({
   outOfStockText: {
     color: 'rgb(181,24,24)',
     fontSize: 16,
-    fontFamily: Constants.Fonts.MEDIUM,
+    fontFamily: Constants.Fonts.LEXENDMEDIUM,
     textAlign: 'center',
     textAlignVertical: 'center',
     alignSelf: 'center',

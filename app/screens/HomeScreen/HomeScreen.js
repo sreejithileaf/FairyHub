@@ -303,10 +303,10 @@ class HomeScreen extends Component {
 
               if (isForceUpdate) {
                 showPopUpBanner = false;
-                this.props.navigation.navigate('AppUpdateScreen', {
-                  message: version.comment,
-                  type: 'update',
-                });
+                // this.props.navigation.navigate('AppUpdateScreen', {
+                //   message: version.comment,
+                //   type: 'update',
+                // });
               } else if (isNormalUpdate) {
                 showPopUpBanner = false;
                 showAlertWithCallback(
@@ -341,10 +341,10 @@ class HomeScreen extends Component {
               }
             }
           } else if (version.status == 'Maintenance') {
-            this.props.navigation.navigate('AppUpdateScreen', {
-              message: version.comment,
-              type: 'maintenance',
-            });
+            // this.props.navigation.navigate('AppUpdateScreen', {
+            //   message: version.comment,
+            //   type: 'maintenance',
+            // });
             showPopUpBanner = false;
           } else {
             // this.props.getEnabledAdds((ads) => {

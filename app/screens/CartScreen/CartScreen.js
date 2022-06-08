@@ -91,7 +91,7 @@ export default class CartScreen extends Component {
 
         let grandTotlaFilterResult = totalCostDict.total_segments.filter(
           obj => {
-            return obj.code === 'grand_total';
+            return obj.code === 'grand_total ';
           },
         );
         totalCostAfterDiscount =
@@ -620,8 +620,9 @@ export default class CartScreen extends Component {
                       <View style={{marginHorizontal: 15}}>
                         <Text
                           style={{
-                            fontFamily: Constants.Fonts.MEDIUM,
+                            fontFamily: Constants.Fonts.LEXENDREGULAR,
                             fontSize: 14,
+                            fontWeight: '400',
                             marginTop: 10,
                             textAlign: 'left',
                             color: "rgb(40, 48, 63)"

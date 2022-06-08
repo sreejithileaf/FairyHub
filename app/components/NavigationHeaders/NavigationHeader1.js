@@ -48,7 +48,7 @@ class NavigationHeader1 extends Component {
             hitSlop={{ top: 20, bottom: 20, left: 50, right: 50 }}
           >
             <Image
-              source={Images.backButton}
+              source={Images.greyBack}
               resizeMode={"contain"}
               style={{
                 marginLeft: 20,

@@ -47,13 +47,13 @@ const styles = StyleSheet.create({
   title: {
     color: constants.APP_BLACK_COLOR,
     fontSize: 14,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDBOLD,
     textAlign: "left",
   },
   description: {
     fontSize: 12,
     color: constants.APP_GRAY_COLOR3,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     paddingTop: 10,
   },
   row: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   specText: {
     fontSize: 12,
     color: constants.APP_GRAY_COLOR3,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     paddingRight: 18,
   },
   unCheckboxImg: {
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
   semiBoldText: {
     fontSize: 11,
     color: constants.APP_GRAY_COLOR3,
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
   },
   priceRow: {
     flexDirection: "row",
@@ -103,11 +103,11 @@ const styles = StyleSheet.create({
   priceRedText: {
     color: constants.APP_RED_COLOR,
     fontSize: 15,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDBOLD,
   },
   btnText: {
     color: constants.APP_GRAY_COLOR3,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     fontSize: 10,
     textAlign: "center",
   },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
   count: {
     color: constants.APP_BLACK_COLOR,
     fontSize: 11,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDBOLD,
   },
   titleStyle: {
     textAlign: "left",
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     fontSize: 18,
     color: constants.APP_THEME_COLOR,
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
   },
   // voucherInput: {
   //   width: normalizedWidth(289),
@@ -159,7 +159,8 @@ const styles = StyleSheet.create({
   voucherInput: {
     flex: 1,
     fontSize: 13,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDLIGHT,
+    fontWeight: "300",
     color: "rgb(105, 113, 128)",
     height: 42,
     borderRadius: 5,
@@ -180,7 +181,7 @@ const styles = StyleSheet.create({
     color: constants.APP_WHITE_COLOR,
     fontSize: 12,
     textAlign: "center",
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
   },
   voucherWrap: {
     marginHorizontal: 15,
@@ -212,21 +213,23 @@ const styles = StyleSheet.create({
   },
   TotalLabel: {
     fontSize: 14,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDLIGHT,
+    fontWeight: "300",
     color: constants.APP_GRAY_COLOR5,
     lineHeight: 20,
     marginBottom: 13,
   },
   TotalLabelBold: {
     fontSize: 14,
-    fontFamily: constants.Fonts.BOLD,
-    color: "rgb(40, 48, 63)",
+    fontFamily: constants.Fonts.LEXENDMEDIUM,   
+    color: constants.APP_GRAY_COLOR6,
     lineHeight: 20,
     marginBottom: 13,
   },
   TotalValues: {
     fontSize: 14,
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDLIGHT,
+    fontWeight: "300",
     color: constants.APP_GRAY_COLOR5,
     lineHeight: 20,
     marginBottom: 13,
@@ -234,15 +237,16 @@ const styles = StyleSheet.create({
   },
   TotalValuesBold: {
     fontSize: 14,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
+    fontWeight: "700",
     color: "rgb(40, 48, 63)",
     lineHeight: 20,
     marginBottom: 13,
   },
   TotalValuesRed: {
     fontSize: 14,
-    fontFamily: constants.Fonts.MEDIUM,
-    color: constants.APP_RED_COLOR,
+    fontFamily: constants.Fonts.LEXENDMEDIUM,
+    color: "rgb(219, 71, 61)",
     lineHeight: 20,
     marginBottom: 13,
   },
@@ -259,7 +263,7 @@ const styles = StyleSheet.create({
   removeText: {
     textAlign: "center",
     color: constants.APP_WHITE_COLOR,
-    fontFamily: constants.Fonts.REGULAR,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
     fontSize: 10,
   },
   simpleRow: {
@@ -279,7 +283,8 @@ const styles = StyleSheet.create({
   },
   applyText: {
     fontSize: 13,
-    fontFamily: constants.Fonts.MEDIUM,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
+    fontWeight: "400",
     color: constants.APP_WHITE_COLOR,
   },
   applyButton: {

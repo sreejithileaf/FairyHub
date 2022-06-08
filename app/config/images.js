@@ -51,6 +51,7 @@ const images = {
   addressEmpty: require('../assets/images/emptyAddress.png'),
   message: require('../assets/icons/message.png'),
   tick: require('../assets/icons/tick.png'),
+  bluetick: require('../assets/icons/bluetick.png'),
   whiteTick: require('../assets/icons/whiteTick.png'),
   refreshIcon: require('../assets/icons/refreshIcon.png'),
   likeButtonWithShade: require('../assets/icons/likeButtonWithShade.png'),
@@ -66,6 +67,10 @@ const images = {
   cross: require('../assets/icons/cross.png'),
   checkbox: require('../assets/icons/o-check.png'),
   unCheckbox: require('../assets/icons/o-uncheck.png'),
+
+  imgBalloon: require('../assets/icons/img_balloon.png'),
+  imgGift: require('../assets/icons/img_gift.png'),
+  addAddress: require('../assets/icons/addAddress.png'),
 
   placeHolderProduct: require('../assets/images/placeHolderProduct.png'),
   filterIcons: {
@@ -144,6 +149,8 @@ const images = {
   map: require('../assets/icons/map.png'),
   loadingImage: require('../assets/images/loadingImage.gif'),
 
+  bluebg: require('../assets/icons/bluebg.png'),
+
   popUpButtonWhatsApp: require('../assets/icons/popUpButtonWhatsApp.png'),
   popUpButtonMessage: require('../assets/icons/popUpButtonMessage.png'),
   popUpButtonCall: require('../assets/icons/popUpButtonCall.png'),
@@ -207,6 +214,11 @@ const images = {
   myFathoraIcon: require('../assets/icons/myFathoraIcon.png'),
   homeAddress: require('../assets/icons/homeNew.png'),
 
+  blueRadioChecked: require('../assets/icons/blueRadioChecked.png'),
+  blueRadioUnChecked: require('../assets/icons/blueRadioUnchecked.png'),
+  greyBack: require('../assets/icons/back.png'),
+  homeIcon: require('../assets/icons/homeIcon.png'),
+
 };
 
-export default images;
+export default images; 

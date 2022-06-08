@@ -1,24 +1,27 @@
 import styles from './styles';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import images from '../../config/images';
 import constants from '../../config/constants';
-import {Text, View, Image, TouchableOpacity, TextInput} from 'react-native';
-import {showAlertWithCallback, isEmpty} from '../../config/common';
-import {translate} from '../../config/languageSwitching';
+import { Text, View, Image, TouchableOpacity, TextInput, ImageBackground } from 'react-native';
+import { showAlertWithCallback, isEmpty } from '../../config/common';
+import { translate } from '../../config/languageSwitching';
 import ImageComponent from '../../components/ImageComponent';
 
-const QuantityIncreament = ({count, onIncreament, onDecreament}) => {
+const QuantityIncreament = ({ count, onIncreament, onDecreament }) => {
   return (
     <View style={styles.increamentWrap}>
       <TouchableOpacity
         onPress={onDecreament}
-        hitSlop={{top: 5, bottom: 5, left: 5, right: 5}}>
+        hitSlop={{ top: 5, bottom: 5, left: 5, right: 5 }}>
         <Image source={images.decrement} style={styles.plusIcon} />
       </TouchableOpacity>
-      <TextInput style={styles.countNum} value={count.toString()} />
+      <ImageBackground source={images.bluebg} style={styles.countNumBg}>
+        <TextInput style={styles.countNum} value={count.toString()} />
+      </ImageBackground>
+
       <TouchableOpacity
         onPress={onIncreament}
-        hitSlop={{top: 5, bottom: 5, left: 5, right: 5}}>
+        hitSlop={{ top: 5, bottom: 5, left: 5, right: 5 }}>
         <Image source={images.increment} style={styles.plusIcon} />
       </TouchableOpacity>
     </View>
@@ -106,8 +109,8 @@ export default class CartCard extends Component {
       appMediaBaseUrl,
       didTapOnItem,
     } = this.props;
-    const {params} = this.props.navigation.state;
-    const {isGiftWrap, isBalloons} = this.state;
+    const { params } = this.props.navigation.state;
+    const { isGiftWrap, isBalloons } = this.state;
 
     let extension_attributes = data.extension_attributes;
     let age = '';
@@ -179,7 +182,7 @@ export default class CartCard extends Component {
       cartAddOnsArray.map(item => {
         let dataArray =
           item.extension_attributes.custom_options &&
-          item.extension_attributes.custom_options.length > 0
+            item.extension_attributes.custom_options.length > 0
             ? item.extension_attributes.custom_options
             : [];
 
@@ -319,10 +322,10 @@ export default class CartCard extends Component {
               </Text>
             </View>
             <View style={styles.priceRow}>
-              <Text style={styles.priceRedText}>
+              <Text style={[styles.priceRedText, { color: constants.APP_GRAY_COLOR6,}]}>
                 {translate('Gross Total')} :{' '}
               </Text>
-              <Text style={[styles.priceRedText]}>
+              <Text style={[styles.priceRedText, { color: constants.APP_GRAY_COLOR6,}]}>
                 {/* {(data?.price * data?.qty).toFixed(3)} {currency} */}
                 {(
                   data?.price * data?.qty +
@@ -337,128 +340,41 @@ export default class CartCard extends Component {
                   style={[
                     styles.priceRedText,
                     {
-                      fontFamily: constants.Fonts.REGULAR,
-                      color: constants.APP_RED_COLOR,
+                      fontFamily: constants.Fonts.LEXENDLIGHT,
+                      color: constants.APP_RED_COLOR2,
                     },
                   ]}>
                   {translate('Non Refundable')}
                 </Text>
               </View>
             )}
-            {!isFromCheckout && (
+          
               <QuantityIncreament
                 count={this.props.data.qty}
                 onIncreament={this._OnIncreament}
                 onDecreament={() => this._OnDecreament(giftWrapsTotal)}
               />
-            )}
+           
           </View>
         </View>
         {(data.extension_attributes['available_balloons'] === '5579' ||
           data.extension_attributes['available_giftwrap'] === '5581') &&
           !hideAddons && (
-            <View style={{paddingHorizontal: 20}}>
-              <View style={styles.row1}>
-                {isFromCheckout ? (
-                  selectedGiftWrapArray.length > 0 ? (
-                    data.extension_attributes['available_giftwrap'] ===
-                      '5581' && (
-                      <TouchableOpacity
-                        style={styles.checkBoxWrap}
-                        activeOpacity={constants.ACTIVE_OPACITY}
-                        hitSlop={{top: 5, bottom: 5, left: 10, right: 10}}
-                        onPress={() => this._enableGiftWrap(navigation, data)}>
-                        {selectedGiftWrapArray.length > 0 ? (
-                          <View style={styles.checkboxImg}>
-                            <Image
-                              source={images.tick}
-                              style={{
-                                height: 10,
-                                width: 10,
-                              }}
-                            />
-                          </View>
-                        ) : (
-                          <View style={styles.unCheckboxImg} />
-                        )}
-                        <Text style={[styles.priceRedText, {marginTop: 10}]}>
-                          {translate('Gift Wrap')}
-                        </Text>
-                      </TouchableOpacity>
-                    )
-                  ) : (
-                    <View style={{flex: 1}} />
-                  )
-                ) : (
-                  data.extension_attributes['available_giftwrap'] ===
-                    '5581' && (
-                    <TouchableOpacity
-                      style={styles.checkBoxWrap}
-                      activeOpacity={constants.ACTIVE_OPACITY}
-                      hitSlop={{top: 5, bottom: 5, left: 10, right: 10}}
-                      onPress={() => this._enableGiftWrap(navigation, data)}>
-                      {selectedGiftWrapArray.length > 0 ? (
-                        <View style={styles.checkboxImg}>
-                          <Image
-                            source={images.tick}
-                            style={{
-                              height: 10,
-                              width: 10,
-                            }}
-                          />
-                        </View>
-                      ) : (
-                        <View style={styles.unCheckboxImg} />
-                      )}
-                      <Text style={[styles.priceRedText, {marginTop: 10}]}>
-                        {translate('Gift Wrap')}
-                      </Text>
-                    </TouchableOpacity>
-                  )
-                )}
 
-                {isFromCheckout ? (
-                  selectedBalloonsArray.length > 0 ? (
-                    data.extension_attributes['available_balloons'] ===
-                      '5579' && (
-                      <TouchableOpacity
-                        style={styles.checkBoxWrap}
-                        activeOpacity={constants.ACTIVE_OPACITY}
-                        hitSlop={{top: 5, bottom: 5, left: 10, right: 10}}
-                        onPress={() => this._enableBalloons(navigation, data)}>
-                        {selectedBalloonsArray.length > 0 ? (
-                          <View style={styles.checkboxImg}>
-                            <Image
-                              source={images.tick}
-                              style={{
-                                height: 10,
-                                width: 10,
-                              }}
-                            />
-                          </View>
-                        ) : (
-                          <View style={styles.unCheckboxImg} />
-                        )}
-                        <Text style={[styles.priceRedText, {marginTop: 10}]}>
-                          {translate('Balloons')}
-                        </Text>
-                      </TouchableOpacity>
-                    )
-                  ) : (
-                    <View style={{flex: 1}} />
-                  )
-                ) : (
+            <View style={styles.row1}>
+              {isFromCheckout ? (
+                selectedBalloonsArray.length > 0 ? (
                   data.extension_attributes['available_balloons'] ===
-                    '5579' && (
+                  '5579' && (
                     <TouchableOpacity
-                      style={styles.checkBoxWrap}
+                      style={[styles.checkBoxWrap, { flexDirection: 'row', }]}
                       activeOpacity={constants.ACTIVE_OPACITY}
-                      hitSlop={{top: 5, bottom: 5, left: 10, right: 10}}
+                      hitSlop={{ top: 5, bottom: 5, left: 10, right: 10 }}
                       onPress={() => this._enableBalloons(navigation, data)}>
                       {selectedBalloonsArray.length > 0 ? (
                         <View style={styles.checkboxImg}>
                           <Image
-                            source={images.tick}
+                            source={images.bluetick}
                             style={{
                               height: 10,
                               width: 10,
@@ -468,35 +384,176 @@ export default class CartCard extends Component {
                       ) : (
                         <View style={styles.unCheckboxImg} />
                       )}
-                      <Text style={[styles.priceRedText, {marginTop: 10}]}>
-                        {translate('Balloons')}
-                      </Text>
+
+                      {selectedBalloonsArray.length > 0 ? (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: constants.APP_DARKBLUE_COLOR, }]}>
+                          {translate('Balloons')}
+                        </Text>
+                      ) : (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: "rgb(105, 113, 128)", }]}>
+                          {translate('Balloons')}
+                        </Text>
+                      )}
+
+
+                      <Image
+                        source={images.imgBalloon}
+                        style={{
+                          height: 18,
+                          width: 18,
+                          marginStart: 10
+                        }}
+                      />
+
                     </TouchableOpacity>
                   )
-                )}
-              </View>
-              <View style={[styles.row1, {marginTop: 10}]}>
-                <View style={styles.checkBoxWrap1}>
-                  {selectedGiftWrapArray.length > 0 && (
-                    <Text style={styles.semiBoldText1}>
-                      {giftWrapsTotal.toFixed(3) + currency}
-                    </Text>
-                  )}
-                </View>
-                <View style={styles.checkBoxWrap1}>
-                  {selectedBalloonsArray.length > 0 && (
-                    <Text style={styles.semiBoldText1}>
-                      {balloonsTotal.toFixed(3) + currency}
-                    </Text>
-                  )}
-                </View>
-              </View>
+                ) : (
+                  <View style={{ flex: 1 }} />
+                )
+              ) : (
+                data.extension_attributes['available_balloons'] ===
+                '5579' && (
+                  <TouchableOpacity
+                    style={[styles.checkBoxWrap, { flexDirection: 'row', }]}
+                    activeOpacity={constants.ACTIVE_OPACITY}
+                    hitSlop={{ top: 5, bottom: 5, left: 10, right: 10 }}
+                    onPress={() => this._enableBalloons(navigation, data)}>
+                    {selectedBalloonsArray.length > 0 ? (
+                      <View style={styles.checkboxImg}>
+                        <Image
+                          source={images.bluetick}
+                          style={{
+                            height: 10,
+                            width: 10,
+                          }}
+                        />
+                      </View>
+                    ) : (
+                      <View style={styles.unCheckboxImg} />
+                    )}
+
+                    {selectedBalloonsArray.length > 0 ? (
+                      <Text style={[styles.priceRedText, { marginHorizontal: 10, color: constants.APP_DARKBLUE_COLOR, }]}>
+                        {translate('Balloons')}
+                      </Text>
+                    ) : (
+                      <Text style={[styles.priceRedText, { marginHorizontal: 10, color: "rgb(105, 113, 128)", }]}>
+                        {translate('Balloons')}
+                      </Text>
+                    )}
+
+                    <Image
+                      source={images.imgBalloon}
+                      style={{
+                        height: 18,
+                        width: 18,                        
+                        marginStart: 10
+                      }}
+                    />
+
+                  </TouchableOpacity>
+                )
+              )}
+
+              {isFromCheckout ? (
+                selectedGiftWrapArray.length > 0 ? (
+                  data.extension_attributes['available_giftwrap'] ===
+                  '5581' && (
+                    <TouchableOpacity
+                      style={[styles.checkBoxWrap, { flexDirection: 'row', }]}
+                      activeOpacity={constants.ACTIVE_OPACITY}
+                      hitSlop={{ top: 5, bottom: 5, left: 10, right: 10 }}
+                      onPress={() => this._enableGiftWrap(navigation, data)}>
+                      {selectedGiftWrapArray.length > 0 ? (
+                        <View style={styles.checkboxImg}>
+                          <Image
+                            source={images.bluetick}
+                            style={{
+                              height: 10,
+                              width: 10,
+                            }}
+                          />
+                        </View>
+                      ) : (
+                        <View style={styles.unCheckboxImg} />
+                      )}
+
+                      {selectedGiftWrapArray.length > 0 ? (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: constants.APP_DARKBLUE_COLOR, }]}>
+                          {translate('Gift Wrap')}
+                        </Text>
+                      ) : (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: "rgb(105, 113, 128)"}]}>
+                          {translate('Gift Wrap')}
+                        </Text>
+                      )} 
+
+
+
+                      <Image
+                        source={images.imgGift}
+                        style={{
+                          height: 18,
+                          width: 18,
+                          marginStart: 3                         
+                        }}
+                      />
+
+                    </TouchableOpacity>
+                  )
+                ) : (
+                  <View style={{ flex: 1 }} />
+                )
+              ) : (
+                data.extension_attributes['available_giftwrap'] ===
+                '5581' && (
+                  <TouchableOpacity
+                    style={[styles.checkBoxWrap, { flexDirection: 'row', }]}
+                    activeOpacity={constants.ACTIVE_OPACITY}
+                    hitSlop={{ top: 5, bottom: 5, left: 10, right: 10 }}
+                    onPress={() => this._enableGiftWrap(navigation, data)}>
+                    {selectedGiftWrapArray.length > 0 ? (
+                      <View style={styles.checkboxImg}>
+                        <Image
+                          source={images.bluetick}
+                          style={{
+                            height: 10,
+                            width: 10,
+                          }}
+                        />
+                      </View>
+                    ) : (
+                      <View style={styles.unCheckboxImg} />
+                    )}
+                     {selectedGiftWrapArray.length > 0 ? (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: constants.APP_DARKBLUE_COLOR, }]}>
+                          {translate('Gift Wrap')}
+                        </Text>
+                      ) : (
+                        <Text style={[styles.priceRedText, { marginHorizontal: 10, color: "rgb(105, 113, 128)"}]}>
+                          {translate('Gift Wrap')}
+                        </Text>
+                      )} 
+
+                    <Image
+                      source={images.imgGift}
+                      style={{
+                        height: 18,
+                        width: 18,
+                        marginStart: 3
+                      }}
+                    />
+
+                  </TouchableOpacity>
+                )
+              )}
             </View>
+
           )}
         {!isFromCheckout && (
           <View style={styles.bottomButtonContainer}>
             <TouchableOpacity
-              style={[styles.bottomButton1Container,{marginEnd:5}]}
+              style={[styles.bottomButton1Container, { marginEnd: 5 }]}
               onPress={() => {
                 this._removeFromCart(data.item_id);
               }}>
@@ -505,7 +562,7 @@ export default class CartCard extends Component {
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
-              style={[styles.bottomButton1Container,{marginStart :5}]}
+              style={[styles.bottomButton1Container, { marginStart: 5 }]}
               onPress={() => {
                 didTapOnMoveToWishlist(data);
               }}>

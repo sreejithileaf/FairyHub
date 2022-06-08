@@ -34,8 +34,9 @@ const styles = StyleSheet.create({
   },
   buttonText1: {
     textAlign: "center",
-    color: constants.APP_GRAY_COLOR,
-    fontFamily: constants.Fonts.BOLD,
+    color: "rgb(40, 48, 63)",
+    fontFamily: constants.Fonts.LEXENDREGULAR,
+    fontWeight: "400",
     fontSize: 15,
   },
   button2: {
@@ -50,7 +51,8 @@ const styles = StyleSheet.create({
   buttonText2: {
     textAlign: "center",
     color: constants.APP_WHITE_COLOR,
-    fontFamily: constants.Fonts.BOLD,
+    fontFamily: constants.Fonts.LEXENDREGULAR,
+    fontWeight: "400",
     fontSize: 15,
   },
 });

@@ -15,6 +15,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Alert,
+
 } from 'react-native';
 import moment from 'moment';
 import styles from './styles';
@@ -22,12 +23,12 @@ import Modal from 'react-native-modal';
 import Images from '../../config/images';
 import HudView from '../../components/hudView';
 import Constants from '../../config/constants';
-import React, {Component, memo} from 'react';
-import {WebView} from 'react-native-webview';
+import React, { Component, memo } from 'react';
+import { WebView } from 'react-native-webview';
 import CartCard from '../../components/CartCard/CartCard';
-import {ScrollView} from 'react-native-gesture-handler';
+import { ScrollView } from 'react-native-gesture-handler';
 import ItemFooter from '../../components/ItemFooter/ItemFooter';
-import {translate} from '../../config/languageSwitching/index';
+import { translate } from '../../config/languageSwitching/index';
 import FooterButton from '../../components/FooterButton/FooterButton';
 import {
   showSingleAlert,
@@ -121,7 +122,7 @@ const CategoryCell = memo(
             }}
           />
         ) : (
-          <View style={{height: 5}} />
+          <View style={{ height: 5 }} />
         )}
       </View>
     );
@@ -200,7 +201,7 @@ class CheckoutView extends Component {
     if (nextProps.cartTotals) {
       // grandTotlaFilterResultOld.length == 0 ||
       // grandTotlaFilterResultNew[0].value != grandTotlaFilterResultOld[0].value
-      const {userToken, cartList, guestcartList} = nextProps;
+      const { userToken, cartList, guestcartList } = nextProps;
       let totalCostDict = nextProps.cartTotals;
       let totalCostBeforeDiscount = 0;
       let totalCostAfterDiscount = 0;
@@ -289,11 +290,11 @@ class CheckoutView extends Component {
       cartID,
     } = this.props;
     this._updateAddressInfo();
-    this.setState({mCartList: cartList});
-    this.setState({mGuestcartList: guestcartList});
+    this.setState({ mCartList: cartList });
+    this.setState({ mGuestcartList: guestcartList });
     this.props.getDeliveryDateAndTIme(this._getDeliveryDateCallback);
 
-    this.setState({guestTokenTemp: guestToken});
+    this.setState({ guestTokenTemp: guestToken });
 
     addEventTracking('giwvka');
 
@@ -309,7 +310,7 @@ class CheckoutView extends Component {
     AppState.addEventListener('change', this._handleAppStateChange);
 
     if (this.props.cartAddOnsArray.length > 0) {
-      this.setState({isAddOnsIncluded: true});
+      this.setState({ isAddOnsIncluded: true });
     }
 
     // this.backHandler = BackHandler.addEventListener(
@@ -330,7 +331,7 @@ class CheckoutView extends Component {
 
   _handleAppStateChange = nextAppState => {
     if (nextAppState === 'background' || nextAppState === 'inactive') {
-      this.setState({timeToGoBackground: new Date()});
+      this.setState({ timeToGoBackground: new Date() });
     }
 
     if (
@@ -342,11 +343,11 @@ class CheckoutView extends Component {
         this.props.navigation.navigate('Home');
       }
     }
-    this.setState({appState: nextAppState});
+    this.setState({ appState: nextAppState });
   };
 
   _updateAddressInfo = () => {
-    const {addressList, userToken, guestAddressList} = this.props;
+    const { addressList, userToken, guestAddressList } = this.props;
     let defaultBillingAddress = null;
     let defaultShippingAddress = null;
 
@@ -417,7 +418,7 @@ class CheckoutView extends Component {
         });
       }
 
-      this.setState({completeHolidays: aaa}, () => {
+      this.setState({ completeHolidays: aaa }, () => {
         this._updateDateAndTime();
       });
     } else {
@@ -426,7 +427,7 @@ class CheckoutView extends Component {
   };
 
   _updateDateAndTime = () => {
-    const {cartList, guestcartList, userToken, guestToken} = this.props;
+    const { cartList, guestcartList, userToken, guestToken } = this.props;
     const {
       completeHolidays,
       deliveryTimeArray,
@@ -453,7 +454,7 @@ class CheckoutView extends Component {
     let maxDay = moment(new Date(), 'YYYY-MM-DD')
       .add(maxDaysToBook, 'days')
       .format('YYYY-MM-DD');
-    this.setState({availableNextDay, availableMaxDay: maxDay});
+    this.setState({ availableNextDay, availableMaxDay: maxDay });
 
     let cart_item = [];
     cartData.map(item => {
@@ -516,7 +517,7 @@ class CheckoutView extends Component {
   };
 
   getDisabledDates = () => {
-    const {maxDaysToBook} = this.state;
+    const { maxDaysToBook } = this.state;
     const current_year = moment().format('YYYY');
     let d1 = new Date();
     let d2 = new Date(Number(current_year) + 1, 0, 31);
@@ -533,7 +534,7 @@ class CheckoutView extends Component {
         date.getDay() === holiday_week[2] ||
         date.getDay() === holiday_week[3]
       )
-        disabledDates[moment(date).format('YYYY-MM-DD')] = {disabled: true};
+        disabledDates[moment(date).format('YYYY-MM-DD')] = { disabled: true };
       date.setDate(date.getDate() + 1);
     }
 
@@ -575,7 +576,7 @@ class CheckoutView extends Component {
       while (now.isSameOrBefore(moment(toDate))) {
         dates.push(now.format('YYYY-MM-DD'));
         if (now <= maxDay) {
-          disabledDates[now.format('YYYY-MM-DD')] = {disabled: true};
+          disabledDates[now.format('YYYY-MM-DD')] = { disabled: true };
         }
         now.add(1, 'days');
       }
@@ -625,7 +626,7 @@ class CheckoutView extends Component {
         }
       });
       completeMonths.map(months => {
-        disabledDates[months] = {disabled: true};
+        disabledDates[months] = { disabled: true };
       });
 
       return disabledDates;
@@ -633,7 +634,7 @@ class CheckoutView extends Component {
   };
 
   _commonTotalPriceUpdate = () => {
-    this.props.getTotalCost(totalCostDict => {});
+    this.props.getTotalCost(totalCostDict => { });
   };
 
   _changeGuestAddress = address => {
@@ -668,7 +669,7 @@ class CheckoutView extends Component {
   };
 
   _didTapOnAddAddress = () => {
-    const {userToken} = this.props;
+    const { userToken } = this.props;
     if (userToken.length > 0) {
       this.props.navigation.navigate('AddressListScreen', {
         didSelectUserUpdateAddress: this._didSelectUserUpdateAddress,
@@ -683,7 +684,7 @@ class CheckoutView extends Component {
   };
 
   _addAddressCallback = deliveryAddressDict => {
-    this.setState({deliveryAddressDict}, () => {
+    this.setState({ deliveryAddressDict }, () => {
       this._setShippingAddress();
     });
   };
@@ -693,8 +694,8 @@ class CheckoutView extends Component {
   };
 
   _setShippingAddress = () => {
-    const {deliveryAddressDict, billingAddressDict} = this.state;
-    const {userToken, guestInfo, userInfo} = this.props;
+    const { deliveryAddressDict, billingAddressDict } = this.state;
+    const { userToken, guestInfo, userInfo } = this.props;
     let email = userToken.length > 0 ? userInfo.email : guestInfo.email;
     let params = {
       addressInformation: {
@@ -731,7 +732,7 @@ class CheckoutView extends Component {
   };
 
   _setShippingAddressCallback = (status, responseData, savedCard) => {
-    const {userToken, guestInfo, isRTL, cartID, guestToken} = this.props;
+    const { userToken, guestInfo, isRTL, cartID, guestToken } = this.props;
     if (status) {
       const paymentMethodsArray = responseData.payment_methods;
 
@@ -764,7 +765,7 @@ class CheckoutView extends Component {
       mGuestcartList,
       shippingAmount,
     } = this.state;
-    const {userToken} = this.props;
+    const { userToken } = this.props;
     let itemArray = userToken.length > 0 ? mCartList : mGuestcartList;
 
     this.props.navigation.navigate('OrderCompletion', {
@@ -919,7 +920,7 @@ class CheckoutView extends Component {
   };
 
   _orderPlacedCallback = (status, orderId) => {
-    const {paymentMethods, checked} = this.state;
+    const { paymentMethods, checked } = this.state;
     isPaymentUpdating = false;
     let paymentOption = paymentMethods[checked];
     if (status) {
@@ -960,7 +961,7 @@ class CheckoutView extends Component {
   };
 
   _didTapOnApplyVoucher = () => {
-    const {voucherCode, isVoucherApplied} = this.state;
+    const { voucherCode, isVoucherApplied } = this.state;
     if (isVoucherApplied) return;
     if (voucherCode === '') {
       showSingleAlert(translate('voucher code empty'));
@@ -969,12 +970,12 @@ class CheckoutView extends Component {
     this.props.applyVoucher(voucherCode, (status, message) => {
       if (status) {
         showSingleAlert(translate('Voucher applied successfully'));
-        this.setState({isVoucherApplied: true});
+        this.setState({ isVoucherApplied: true });
         this._commonTotalPriceUpdate();
       } else {
         //showSingleAlert(translate("Invalid Voucher"));
         showSingleAlert(message);
-        this.setState({voucherCode: '', isVoucherApplied: false});
+        this.setState({ voucherCode: '', isVoucherApplied: false });
       }
     });
   };
@@ -998,7 +999,7 @@ class CheckoutView extends Component {
   };
 
   _didTapOnEditOrderContent = () => {
-    const {isFromProductDetail} = this.state;
+    const { isFromProductDetail } = this.state;
 
     if (isFromProductDetail) {
       this.props.navigation.navigate('Cart', {
@@ -1013,8 +1014,8 @@ class CheckoutView extends Component {
   };
 
   _getPaymentUrl = (selectedPaymentOption, newParams) => {
-    const {userToken, guestInfo, userInfo, cartID, guestToken} = this.props;
-    const {deliveryNoteInState} = this.state;
+    const { userToken, guestInfo, userInfo, cartID, guestToken } = this.props;
+    const { deliveryNoteInState } = this.state;
     let params = {};
     if (userToken.length > 0) {
       params = {
@@ -1048,7 +1049,7 @@ class CheckoutView extends Component {
         });
 
         setTimeout(() => {
-          this.setState({isOpenPaymentView: true});
+          this.setState({ isOpenPaymentView: true });
         }, 500);
       }
     });
@@ -1108,7 +1109,7 @@ class CheckoutView extends Component {
       myFatoorahSessionID,
       checked,
     } = this.state;
-    const {guestToken, quote_id, userToken, cartID} = this.props;
+    const { guestToken, quote_id, userToken, cartID } = this.props;
     let myFatoorahPaymentSuccessUrl = Constants.MYFATOORAH_PAYMENT_SUCCESS_URL;
 
     let myFatoorahPaymentFailUrl = Constants.MYFATOORAH_PAYMENT_FAIL_URL;
@@ -1146,7 +1147,7 @@ class CheckoutView extends Component {
             isMyFatoorahPaymentView: false,
           });
           setTimeout(() => {
-            this.setState({isOpenPaymentView: true});
+            this.setState({ isOpenPaymentView: true });
           }, 500);
         }
       });
@@ -1156,7 +1157,7 @@ class CheckoutView extends Component {
       //   return;
       // }
       isMyFatoorahPaymentUpdating = false;
-      this.setState({isMyFatoorahPaymentView: false, loaderVisible: false});
+      this.setState({ isMyFatoorahPaymentView: false, loaderVisible: false });
     } else if (state.url.includes(myFatoorahCancelUrl)) {
       console.log('CANCEL-------', state);
       isMyFatoorahPaymentUpdating = false;
@@ -1192,7 +1193,7 @@ class CheckoutView extends Component {
     trimmedUrl = trimmedUrl.replace('/ar/', '/');
     // if (state.url.indexOf(paymentSuccessUrl) != -1) {
     if (trimmedUrl.includes(paymentSuccessUrl)) {
-      const {userToken, guestInfo, userInfo, cartID, guestToken} = this.props;
+      const { userToken, guestInfo, userInfo, cartID, guestToken } = this.props;
 
       console.log('SUCCESS PAY OPTIN-------', state);
 
@@ -1208,10 +1209,10 @@ class CheckoutView extends Component {
       while ((match = regex.exec(trimmedUrl))) {
         params[match[1]] = match[2];
       }
-      const {paymentId, Id} = params;
+      const { paymentId, Id } = params;
 
       if (paymentId && Id) {
-        this.setState({isOpenPaymentView: false});
+        this.setState({ isOpenPaymentView: false });
 
         addRevenueTracking(
           'flzww8',
@@ -1239,7 +1240,7 @@ class CheckoutView extends Component {
         }
 
         setTimeout(() => {
-          this.setState({loaderVisible: false});
+          this.setState({ loaderVisible: false });
           this.props.placeOrderWithPayment(
             params,
             paymentOption.IsEmbeddedSupported,
@@ -1247,11 +1248,11 @@ class CheckoutView extends Component {
           );
         }, 3000);
 
-        this.setState({paymentParams: params});
+        this.setState({ paymentParams: params });
       } else {
         alert('Payment failed');
-        this.setState({isOpenPaymentView: false});
-        this.setState({loaderVisible: false});
+        this.setState({ isOpenPaymentView: false });
+        this.setState({ loaderVisible: false });
         setTimeout(() => {
           this.errorInPayment();
         }, 500);
@@ -1270,19 +1271,19 @@ class CheckoutView extends Component {
       while ((match = regex.exec(trimmedUrl))) {
         params[match[1]] = match[2];
       }
-      const {paymentId, Id} = params;
+      const { paymentId, Id } = params;
 
       console.log('PARAMS===FAILED====PAYMENT============', paymentId, Id);
 
-      this.props.getPaymentFailedInfo({paymentId: Id}, (status, errorInfo) => {
-        this.setState({loaderVisible: false});
+      this.props.getPaymentFailedInfo({ paymentId: Id }, (status, errorInfo) => {
+        this.setState({ loaderVisible: false });
         isPaymentUpdating = false;
 
-        this.setState({isOpenPaymentView: false});
+        this.setState({ isOpenPaymentView: false });
         setTimeout(() => {
           if (errorInfo) {
             showSingleAlert(errorInfo.Error, translate('Ok'), () => {
-              this.props.getProuctsInCart(response => {});
+              this.props.getProuctsInCart(response => { });
               // let params = {order_id: this.state.orderId};
               // this.props.retainCart(params, (status, errorData) => {
               //   let outOfStockCount = errorData.length;
@@ -1353,7 +1354,7 @@ class CheckoutView extends Component {
   };
 
   errorInPayment = () => {
-    const {userToken, guestInfo, userInfo, cartID, guestToken} = this.props;
+    const { userToken, guestInfo, userInfo, cartID, guestToken } = this.props;
 
     // showSingleAlert(
     //   userToken.length > 0
@@ -1365,7 +1366,7 @@ class CheckoutView extends Component {
     //   }
     // );
 
-    let params = {order_id: this.state.orderId};
+    let params = { order_id: this.state.orderId };
     this.props.retainCart(params, (status, errorData) => {
       let outOfStockCount = errorData.length;
 
@@ -1422,7 +1423,7 @@ class CheckoutView extends Component {
   };
 
   _didSubmiDeliveryNote = () => {
-    const {deliveryNoteInState, deliveryNoteTemp} = this.state;
+    const { deliveryNoteInState, deliveryNoteTemp } = this.state;
     this.setState({
       deliveryNoteInState: deliveryNoteTemp,
       isDeliveryNoteViewShow: false,
@@ -1430,7 +1431,7 @@ class CheckoutView extends Component {
   };
 
   _deleteDeliveryNote = () => {
-    const {deliveryNoteInState} = this.state;
+    const { deliveryNoteInState } = this.state;
 
     showAlertWithCallback(
       translate('removeDeliveryNote'),
@@ -1438,8 +1439,8 @@ class CheckoutView extends Component {
       translate('No'),
       () => {
         this.setState(
-          {deliveryNoteInState: '', deliveryNoteTemp: ''},
-          () => {},
+          { deliveryNoteInState: '', deliveryNoteTemp: '' },
+          () => { },
         );
       },
       null,
@@ -1447,7 +1448,7 @@ class CheckoutView extends Component {
   };
 
   _updateDeliveryDateTime = (data, index) => {
-    const {guestcartList, cartList, userToken} = this.props;
+    const { guestcartList, cartList, userToken } = this.props;
     let updatedDeliveryDateTime = this.state.updatedDeliveryDateTime;
     if (data.type == 'sameDayAll') {
       let cartData = userToken.length > 0 ? cartList : guestcartList;
@@ -1497,7 +1498,7 @@ class CheckoutView extends Component {
       });
     }
 
-    this.setState({updatedDeliveryDateTime});
+    this.setState({ updatedDeliveryDateTime });
   };
 
   render() {
@@ -1629,7 +1630,7 @@ class CheckoutView extends Component {
                     data={itemArray}
                     keyExtractor={(item, index) => index.toString()}
                     extraData={itemArray}
-                    renderItem={({item, index}) => (
+                    renderItem={({ item, index }) => (
                       <View key={index + '22'}>
                         <CategoryCell
                           item={item}
@@ -1663,7 +1664,7 @@ class CheckoutView extends Component {
                   />
 
                   <View style={styles.itemCellContainer}>
-                    <View style={{marginHorizontal: 20}}>
+                    <View style={{ marginHorizontal: 20 }}>
                       <Text style={styles.voucherTitle}>
                         {translate('Add Voucher code')}
                       </Text>
@@ -1676,12 +1677,12 @@ class CheckoutView extends Component {
                         <TextInput
                           style={[
                             styles.voucherInput,
-                            {textAlign: isRTL ? 'right' : 'left'},
+                            { textAlign: isRTL ? 'right' : 'left' },
                           ]}
                           value={voucherCode}
                           editable={!isVoucherApplied}
                           onChangeText={text =>
-                            this.setState({voucherCode: text})
+                            this.setState({ voucherCode: text })
                           }
                           placeholder={translate('Enter Voucher Code')}
                         />
@@ -1691,7 +1692,7 @@ class CheckoutView extends Component {
                             {
                               backgroundColor: isVoucherApplied
                                 ? 'green'
-                                : Constants.APP_THEME_COLOR,
+                                : Constants.APP_DARKBLUE_COLOR,
                             },
                           ]}
                           onPress={this._didTapOnApplyVoucher}>
@@ -1699,7 +1700,7 @@ class CheckoutView extends Component {
                             <Text
                               style={[
                                 styles.applyText,
-                                {color: Constants.APP_WHITE_COLOR},
+                                { color: Constants.APP_WHITE_COLOR },
                               ]}>
                               {translate('Applied')}
                             </Text>
@@ -1713,7 +1714,7 @@ class CheckoutView extends Component {
                       {isVoucherApplied && (
                         <View style={styles.removeVoucher}>
                           <TouchableOpacity
-                            activeOpacity={constants.ACTIVE_OPACITY}
+                            activeOpacity={Constants.ACTIVE_OPACITY}
                             style={styles.removeWrap}
                             hitSlop={{
                               top: 20,
@@ -1745,7 +1746,7 @@ class CheckoutView extends Component {
                   <View style={styles.lineView2} />
                   {paymentMethods.length > 0 && (
                     <View style={styles.itemCellContainer}>
-                      <View style={{marginHorizontal: 20}}>
+                      <View style={{ marginHorizontal: 20 }}>
                         <Text style={styles.addVoucherCode}>
                           {translate('Payment Methods')}
                         </Text>
@@ -1757,15 +1758,15 @@ class CheckoutView extends Component {
                               style={styles.paymentMethodButton}
                               activeOpacity={Constants.ACTIVE_OPACITY}>
                               <Image
-                                source={Images.radioChecked3}
-                                style={{width: 20, height: 20}}
+                                source={Images.blueRadioChecked}
+                                style={{ width: 20, height: 20 }}
                               />
-                              <Text style={[styles.paymentText, {flex: 1}]}>
+                              <Text style={[styles.paymentText, { flex: 1 }]}>
                                 {item.title}
                               </Text>
                               <Image
-                                resizeMode={'contain'}
-                                style={{width: 40, height: 40}}
+                                resizeMode={'contain'}  
+                                style={{ width: 40, height: 40 }}
                                 source={item.image}
                               />
                             </TouchableOpacity>
@@ -1774,26 +1775,26 @@ class CheckoutView extends Component {
                               key={'fff' + item.title}
                               onPress={() => {
                                 this._didTapOnPaymentMethod(item);
-                                this.setState({checked: key});
+                                this.setState({ checked: key });
                               }}
                               style={styles.paymentMethodButton}
                               activeOpacity={Constants.ACTIVE_OPACITY}>
                               <Image
-                                source={Images.radioUnchecked2}
-                                style={{width: 20, height: 20}}
+                                source={Images.blueRadioUnChecked }
+                                style={{ width: 20, height: 20 }}
                               />
-                              <Text style={[styles.paymentText, {flex: 1}]}>
+                              <Text style={[styles.paymentText, { flex: 1 }]}>
                                 {item.title}
                               </Text>
                               <Image
                                 resizeMode={'contain'}
-                                style={{width: 40, height: 40}}
+                                style={{ width: 40, height: 40 }}
                                 source={item.image}
                               />
                             </TouchableOpacity>
                           );
                         })}
-                        <View style={{height: 10}} />
+                        <View style={{ height: 10 }} />
                       </View>
                     </View>
                   )}
@@ -1801,13 +1802,13 @@ class CheckoutView extends Component {
                   <View style={styles.lineView} />
                   <View style={styles.shippingAndTotal}>
                     <View style={styles.itemCellContainer}>
-                      <View style={{marginHorizontal: 20}}>
+                      <View style={{ marginHorizontal: 20 }}>
                         <View
                           style={{
                             flexDirection: 'row',
                             alignItems: 'center',
                           }}>
-                          <Text style={[styles.addVoucherCode, {flex: 1}]}>
+                          <Text style={[styles.addVoucherCode, { flex: 1 }]}>
                             {translate('Delivery Address')}
                           </Text>
                         </View>
@@ -1836,9 +1837,9 @@ class CheckoutView extends Component {
                                   userToken.length > 0
                                     ? this._didTapOnAddAddress
                                     : () =>
-                                        this._changeGuestAddress(
-                                          deliveryAddressDict,
-                                        )
+                                      this._changeGuestAddress(
+                                        deliveryAddressDict,
+                                      )
                                 }
                                 hitSlop={{
                                   left: 10,
@@ -1848,7 +1849,7 @@ class CheckoutView extends Component {
                                 }}
                                 style={styles.changeAddressButton}>
                                 <Text style={styles.changeAddressButtonText}>
-                                  {translate('Change Address')}
+                                  {translate('Change')}
                                 </Text>
                               </TouchableOpacity>
                             )}
@@ -1869,15 +1870,15 @@ class CheckoutView extends Component {
                       <View style={styles.itemCellContainer}>
                         <TouchableOpacity
                           onPress={() =>
-                            this.setState({isDeliveryNoteViewShow: true})
+                            this.setState({ isDeliveryNoteViewShow: true })
                           }
-                          style={{marginHorizontal: 20}}>
+                          style={{ marginHorizontal: 20 }}>
                           <View
                             style={{
                               flexDirection: 'row',
                               alignItems: 'center',
                             }}>
-                            <Text style={[styles.addVoucherCode1, {flex: 1}]}>
+                            <Text style={[styles.addVoucherCode1, { flex: 1 }]}>
                               {translate('Delivery Notes')} :{' '}
                               <Text style={styles.addVoucherCode2}>
                                 {deliveryNoteInState}
@@ -1897,12 +1898,23 @@ class CheckoutView extends Component {
                         </TouchableOpacity>
                       </View>
                     ) : (
-                      <View style={{marginHorizontal: 20, marginTop: 20}}>
+                      <View style={{ marginHorizontal: 20, marginTop: 20 }}>
                         <TouchableOpacity
                           onPress={() =>
-                            this.setState({isDeliveryNoteViewShow: true})
+                            this.setState({ isDeliveryNoteViewShow: true })
                           }
                           style={styles.addAddressButton}>
+
+                          <Image
+                            source={Images.addAddress}
+                            style={{
+                              height: 13.5,
+                              width: 11.25,
+                              marginStart: 5,
+                              marginEnd: 5
+                            }}
+                          />
+
                           <Text style={styles.addAddressButtonText}>
                             {translate('Add Delivery Note')}
                           </Text>
@@ -1911,13 +1923,13 @@ class CheckoutView extends Component {
                     )}
 
                     <View style={styles.itemCellContainer}>
-                      <View style={{marginHorizontal: 20}}>
+                      <View style={{ marginHorizontal: 20, marginBottom: 10 }}>
                         <View
                           style={{
                             flexDirection: 'row',
                             alignItems: 'center',
                           }}>
-                          <Text style={[styles.addVoucherCode, {flex: 1}]}>
+                          <Text style={[styles.addVoucherCode, { flex: 1 }]}>
                             {translate('Billing Address')}
                           </Text>
                         </View>
@@ -1944,9 +1956,9 @@ class CheckoutView extends Component {
                                 userToken.length > 0
                                   ? this._didTapOnAddAddress
                                   : () =>
-                                      this._changeGuestAddress(
-                                        billingAddressDict,
-                                      )
+                                    this._changeGuestAddress(
+                                      billingAddressDict,
+                                    )
                               }
                               hitSlop={{
                                 left: 10,
@@ -1956,7 +1968,7 @@ class CheckoutView extends Component {
                               }}
                               style={styles.changeAddressButton}>
                               <Text style={styles.changeAddressButtonText}>
-                                {translate('Change Address')}
+                                {translate('Change')}
                               </Text>
                             </TouchableOpacity>
                           </View>
@@ -1973,9 +1985,12 @@ class CheckoutView extends Component {
                     </View>
                     <View style={styles.separatorView3} />
                     <View style={styles.itemCellContainer}>
-                      <View style={{marginHorizontal: 20}}>
-                        <View style={{flexDirection: 'row'}}>
-                          <Text style={styles.titleLabel}>
+                      <View style={{ marginHorizontal: 20 }}>
+                        <View style={{ flexDirection: 'row' }}>
+                          <Text style={[styles.titleLabel, {
+                            fontFamily: Constants.Fonts.LEXENDLIGHT,
+                            color: Constants.APP_GRAY_COLOR5,
+                          }]}>
                             {translate('Cart Total (Before Discounts)')}
                           </Text>
                           <Text style={styles.titleValueLabel}>
@@ -2034,8 +2049,11 @@ class CheckoutView extends Component {
                         )}
 
                         {shippingAmount ? (
-                          <View style={{flexDirection: 'row'}}>
-                            <Text style={styles.titleLabel}>
+                          <View style={{ flexDirection: 'row' }}>
+                            <Text style={[styles.titleLabel, {
+                              fontFamily: Constants.Fonts.LEXENDLIGHT,
+                              color: Constants.APP_GRAY_COLOR5,
+                            }]}>
                               {translate('Local Shipping')}
                             </Text>
                             <Text style={styles.titleValueLabel}>
@@ -2059,8 +2077,11 @@ class CheckoutView extends Component {
                     </View>
                   )} */}
 
-                        <View style={{flexDirection: 'row', marginBottom: 5}}>
-                          <Text style={styles.titleLabel}>
+                        <View style={{ flexDirection: 'row', marginBottom: 5 }}>
+                          <Text style={[styles.titleLabel, {
+                            fontFamily: Constants.Fonts.LEXENDLIGHT,
+                            color: Constants.APP_GRAY_COLOR5,
+                          }]}>
                             {translate('Cart Total (After Discounts)')}
                           </Text>
                           <Text style={styles.titleValueLabel}>
@@ -2069,19 +2090,33 @@ class CheckoutView extends Component {
                               currency}
                           </Text>
                         </View>
-                        <View style={styles.separatorView2} />
+                      </View>
+                      <View style={styles.separatorView2} />
+                      <View style={styles.itemCellContainer}>
+                      <View style={{ marginHorizontal: 20 }}>
                         <View style={styles.totalViewContainer}>
-                          <Text style={[styles.titleLabel, styles.totalTitle]}>
+                          <Text style={[styles.titleLabel, {
+                            fontFamily: Constants.Fonts.LEXENDMEDIUM,
+                            color: Constants.APP_GRAY_COLOR6,
+                          }]}>
                             {translate('TOTAL')}
                           </Text>
-                          <Text
-                            style={[styles.titleLabel, styles.grandTotalText]}>
+                          <Text style={[styles.titleLabel, {
+                            fontFamily: Constants.Fonts.LEXENDMEDIUM,
+                            color: Constants.APP_GRAY_COLOR6,
+                            textAlign: 'right',
+                            flex: 1
+                          }]}>
                             {Number(totalCostDict.grand_total).toFixed(3) +
                               ' ' +
                               currency}
                           </Text>
                         </View>
+
+</View>
                       </View>
+
+                      <View style={styles.separatorView2} />
                     </View>
                   </View>
                 </View>
@@ -2090,8 +2125,8 @@ class CheckoutView extends Component {
           }}></FlatList>
 
         <FooterButton
-          buttonText1={translate('Edit Order Content').toUpperCase()}
-          buttonText2={translate('PLACE ORDER')}
+          buttonText1={translate('Edit Order Content')}
+          buttonText2={translate('Place Order')}
           onButton1Click={this._didTapOnEditOrderContent}
           onButton2Click={this._didTapOnPlaceOrder}
           screenWidth={this.props.screenWidth}
@@ -2099,13 +2134,13 @@ class CheckoutView extends Component {
         <Modal
           isVisible={isMyFatoorahPaymentView}
           onBackdropPress={() => {
-            this.setState({isMyFatoorahPaymentView: false});
+            this.setState({ isMyFatoorahPaymentView: false });
           }}
           onBackButtonPress={() => {
-            this.setState({isMyFatoorahPaymentView: false});
+            this.setState({ isMyFatoorahPaymentView: false });
           }}
           backdropOpacity={0.6}
-          style={{margin: 0}}>
+          style={{ margin: 0 }}>
           <View style={styles.deliveryNoteModalWrapper}>
             <View
               style={{
@@ -2140,18 +2175,18 @@ class CheckoutView extends Component {
                   source={{
                     uri: myFathoraPaymentUrl,
                   }}
-                  onLoadStart={() => this.setState({loaderVisible: true})}
-                  onLoadEnd={() => this.setState({loaderVisible: false})}
+                  onLoadStart={() => this.setState({ loaderVisible: true })}
+                  onLoadEnd={() => this.setState({ loaderVisible: false })}
                   onNavigationStateChange={this._onLoadMyFatoorahPayment}
                   onError={syntheticEvent => {
-                    const {nativeEvent} = syntheticEvent;
+                    const { nativeEvent } = syntheticEvent;
                     console.log('-------WebView error: ', nativeEvent);
                     this.setState({
                       loaderVisible: false,
                       paymentUrl: '',
                     });
                     showSingleAlert(translate('API_Failed'), 'Ok', () => {
-                      this.setState({isMyFatoorahPaymentView: false});
+                      this.setState({ isMyFatoorahPaymentView: false });
                     });
                   }}
                   javaScriptEnabled={true}
@@ -2168,15 +2203,15 @@ class CheckoutView extends Component {
             setTimeout(() => {
               this.errorInPayment();
             }, 500);
-            this.setState({isOpenPaymentView: false});
+            this.setState({ isOpenPaymentView: false });
           }}
           onBackButtonPress={() => {
             setTimeout(() => {
               this.errorInPayment();
             }, 500);
-            this.setState({isOpenPaymentView: false});
+            this.setState({ isOpenPaymentView: false });
           }}
-          style={{margin: 0}}>
+          style={{ margin: 0 }}>
           <SafeAreaView
             style={{
               margin: 0,
@@ -2205,18 +2240,18 @@ class CheckoutView extends Component {
               source={{
                 uri: paymentUrl,
               }}
-              onLoadStart={() => this.setState({loaderVisible: true})}
-              onLoadEnd={() => this.setState({loaderVisible: false})}
+              onLoadStart={() => this.setState({ loaderVisible: true })}
+              onLoadEnd={() => this.setState({ loaderVisible: false })}
               onNavigationStateChange={this._onLoad}
               onError={syntheticEvent => {
-                const {nativeEvent} = syntheticEvent;
+                const { nativeEvent } = syntheticEvent;
                 console.log('-------WebView error: ', nativeEvent);
                 this.setState({
                   loaderVisible: false,
                   paymentUrl: '',
                 });
                 showSingleAlert(translate('API_Failed'), 'Ok', () => {
-                  this.setState({isOpenPaymentView: false});
+                  this.setState({ isOpenPaymentView: false });
                   setTimeout(() => {
                     this.errorInPayment();
                   }, 500);
@@ -2239,7 +2274,7 @@ class CheckoutView extends Component {
           //onBackdropPress={() => this.setState({ isDeliveryNoteViewShow: false })}
           backdropOpacity={0.6}
           onBackButtonPress={() =>
-            this.setState({isDeliveryNoteViewShow: false})
+            this.setState({ isDeliveryNoteViewShow: false })
           }>
           {/* <ScrollView style={{ flex: 1 }}> */}
           <View style={styles.deliveryNoteModalWrapper}>
@@ -2254,7 +2289,7 @@ class CheckoutView extends Component {
                   placeholder={translate('Delivery note')}
                   returnKeyType={'done'}
                   onChangeText={value =>
-                    this.setState({deliveryNoteTemp: value})
+                    this.setState({ deliveryNoteTemp: value })
                   }
                   underlineColorAndroid="transparent"
                   value={deliveryNoteTemp}
@@ -2264,7 +2299,7 @@ class CheckoutView extends Component {
 
               <View style={styles.pwdSubmitWrapper}>
                 <TouchableOpacity
-                  onPress={() => this.setState({isDeliveryNoteViewShow: false})}
+                  onPress={() => this.setState({ isDeliveryNoteViewShow: false })}
                   style={styles.pwdCancelWrapper}>
                   <Text style={styles.pwdCancelTxt}>{translate('Cancel')}</Text>
                 </TouchableOpacity>
@@ -2291,7 +2326,7 @@ class CheckoutView extends Component {
           //onBackdropPress={() => this.setState({ isDeliveryNoteViewShow: false })}
           backdropOpacity={0.6}
           onBackButtonPress={() =>
-            this.setState({isDeliveryNoteViewShow: false})
+            this.setState({ isDeliveryNoteViewShow: false })
           }>
           {/* <ScrollView style={{ flex: 1 }}> */}
           <View style={styles.deliveryNoteModalWrapper}>
@@ -2306,7 +2341,7 @@ class CheckoutView extends Component {
                 this._getPaymentUrl(paymentOption, params);
               }}
               didTapOnClose={() => {
-                this.setState({isShowPaymentView: false});
+                this.setState({ isShowPaymentView: false });
               }}></PaymentScreen>
           </View>
         </Modal>

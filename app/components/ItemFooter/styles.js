@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     width: 18,
     marginRight: 10,
     borderWidth: 1,
-    borderColor: constants.APP_BLACK_COLOR,
+    borderColor: Constants.APP_GRAY_COLOR6,
     alignItems: "center",
     justifyContent: "center",
     // tintColor: "#44c856",
@@ -117,10 +117,11 @@ const styles = StyleSheet.create({
     // backgroundColor: "green",
   },
   semiBoldText3: {
-    fontSize: 16,
-    color: constants.APP_BLACK_COLOR,
-    fontFamily: constants.Fonts.MEDIUM,
-    marginLeft: 10,
+    fontSize: 15,
+    color: Constants.APP_GRAY_COLOR6, 
+    fontFamily: Constants.Fonts.LEXENDLIGHT,  
+    marginLeft: 8,
+    marginBottom: 10
   },
   dateInput: {
     flex: 1,
@@ -159,9 +160,9 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   sameDayDescription: {
-    fontFamily: Constants.Fonts.REGULAR,
+    fontFamily: Constants.Fonts.LEXENDLIGHT,
     fontSize: 12,
-    color: Constants.APP_GRAY_COLOR,
+    color: Constants.APP_GRAY_COLOR5,
     marginTop: 5,
   },
   dateAndTimeSlot: {

@@ -536,7 +536,7 @@ export default class ItemFooter extends Component {
                       style={{
                         height: 10,
                         width: 10,
-                        tintColor: Constants.APP_BLACK_COLOR,
+                        tintColor: Constants.APP_GRAY_COLOR6,
                       }}
                     />
                   </View>

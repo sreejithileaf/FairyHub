@@ -95,6 +95,13 @@ export default constants = {
   APP_BASE_WIDTH: 414,
 
   Fonts: {
+    LEXENDREGULAR: Platform.OS === 'ios' ? 'LexendDeca_regular' : 'LexendDeca_regular',
+    LEXENDBOLD: Platform.OS === 'ios' ? 'LexendDeca_Bold' : 'LexendDeca_Bold',
+    LEXENDMEDIUM: Platform.OS === 'ios' ? 'LexendDeca_Medium' : 'LexendDeca_Medium',
+    LEXENDLIGHT: Platform.OS === 'ios' ? 'LexendDeca_Light' : 'LexendDeca_Light',
+    LEXENDEXTRALIGHT: Platform.OS === 'ios' ? 'LexendDeca_ExtraLight' : 'LexendDeca_ExtraLight',
+    SPACEGROTESKMEDIUM: Platform.OS === 'ios' ? 'SpaceGrotesk_Medium' : 'SpaceGrotesk_Medium',
+
     BOLD: Platform.OS === 'ios' ? 'lato-bold' : 'lato_bold',
     LIGHT: Platform.OS === 'ios' ? 'Roboto-Light' : 'Roboto_Light',
     MEDIUM: Platform.OS === 'ios' ? 'lato-medium' : 'lato_medium',
@@ -120,6 +127,7 @@ export default constants = {
   APP_GRAY_COLOR3: 'rgb(120,120,120)',
   APP_GRAY_COLOR4: 'rgb(217,217,217)',
   APP_GRAY_COLOR5: 'rgb(105, 113, 128)',
+  APP_GRAY_COLOR6: 'rgb(40, 48, 63)',
   APP_WHITE_COLOR: '#FFFFFF',
   APP_TEXT_PINK_COLOR: 'rgb(203,39,100)',
   APP_BLACK_COLOR: '#000000', //"#282828",
@@ -129,6 +137,7 @@ export default constants = {
   APP_GREY_TEXT_COLOR: 'rgb(104,108,126)',
   APP_BOX_BACKGROUND_GREY: 'rgb(244,246,248)',
   APP_RED_COLOR: 'rgb(249,91,91)',
+  APP_RED_COLOR2: 'rgb(219, 71, 61)',
   APP_BLUE_COLOR: '#0894FD',
   APP_TRANSPARENT_COLOR: 'transparent',
   APP_OUT_OF_STOCK_TEXT: '#b51818',
